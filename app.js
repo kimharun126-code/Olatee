@@ -541,4 +541,39 @@ if (colorOptions.length && selectedColor) {
             selectedColor.textContent = colorNames[option.value];
         });
     });
-       }
+        /* =========================================
+   ADMIN LOGIN
+   ========================================= */
+
+const adminLoginForm = document.querySelector("#admin-login-form");
+
+if (adminLoginForm && supabase) {
+
+    adminLoginForm.addEventListener("submit", async (event) => {
+
+        event.preventDefault();
+
+        const email =
+            document.querySelector("#admin-email").value.trim();
+
+        const password =
+            document.querySelector("#admin-password").value;
+
+        const message =
+            document.querySelector("#admin-login-message");
+
+        message.textContent = "Signing in...";
+
+        const { error } = await supabase.auth.signInWithPassword({
+            email: email,
+            password: password
+        });
+
+        if (error) {
+            message.textContent = error.message;
+            return;
+        }
+
+        window.location.href = "admin-dashboard.html";
+    });
+        }
