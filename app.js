@@ -2,20 +2,23 @@
    OLATEE - MAIN JAVASCRIPT
    ========================================= */
 
+const SUPABASE_URL = "https://ofigaymyknrxrggtjtad.supabase.co";
+
+const SUPABASE_KEY = const SUPABASE_URL = "https://ofigaymyknrxrggtjtad.supabase.co";
+
+const SUPABASE_KEY = "YOUR_PUBLISHABLE_KEY_HERE";
+
+const supabase = window.supabase.createClient(
+    SUPABASE_URL,
+    SUPABASE_KEY
+);
+
+const supabase = window.supabase.createClient(
+    SUPABASE_URL,
+    SUPABASE_KEY
+);
+
 document.addEventListener("DOMContentLoaded", () => {
-
-    /* =========================================
-       MOBILE MENU
-       ========================================= */
-const menuButton = document.querySelector(".menu-button");
-    const nav = document.querySelector(".main-nav");
-
-    if (menuButton && nav) {
-        menuButton.addEventListener("click", () => {
-            nav.classList.toggle("open");
-            menuButton.classList.toggle("open");
-        });
-    }
 
 
     /* =========================================
