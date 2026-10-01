@@ -576,4 +576,27 @@ if (adminLoginForm && supabase) {
 
         window.location.href = "admin-dashboard.html";
     });
+        /* =========================================
+   ADMIN DASHBOARD AUTH
+   ========================================= */
+
+const adminLogoutButton = document.querySelector("#admin-logout");
+
+if (adminLogoutButton && supabase) {
+
+    supabase.auth.getSession().then(({ data }) => {
+
+        if (!data.session) {
+            window.location.href = "admin.html";
         }
+
+    });
+
+    adminLogoutButton.addEventListener("click", async () => {
+
+        await supabase.auth.signOut();
+
+        window.location.href = "admin.html";
+
+    });
+}
