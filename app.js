@@ -6,7 +6,7 @@ const SUPABASE_URL = "https://ofigaymyknrxrggtjtad.supabase.co";
 
 const SUPABASE_KEY = const SUPABASE_URL = "https://ofigaymyknrxrggtjtad.supabase.co";
 
-const SUPABASE_KEY = "YOUR_PUBLISHABLE_KEY_HERE";
+const SUPABASE_KEY = "sb_publishable_zvWFoOQd0pql4n0811VMUw_DWZmR52A";
 
 const supabase = window.supabase.createClient(
     SUPABASE_URL,
