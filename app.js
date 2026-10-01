@@ -4,19 +4,11 @@
 
 const SUPABASE_URL = "https://ofigaymyknrxrggtjtad.supabase.co";
 
-const SUPABASE_KEY = const SUPABASE_URL = "https://ofigaymyknrxrggtjtad.supabase.co";
-
 const SUPABASE_KEY = "sb_publishable_zvWFoOQd0pql4n0811VMUw_DWZmR52A";
 
-const supabase = window.supabase.createClient(
-    SUPABASE_URL,
-    SUPABASE_KEY
-);
-
-const supabase = window.supabase.createClient(
-    SUPABASE_URL,
-    SUPABASE_KEY
-);
+const supabase = window.supabase
+    ? window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY)
+    : null;
 
 document.addEventListener("DOMContentLoaded", () => {
 
@@ -549,4 +541,4 @@ if (colorOptions.length && selectedColor) {
             selectedColor.textContent = colorNames[option.value];
         });
     });
-}
+       }
